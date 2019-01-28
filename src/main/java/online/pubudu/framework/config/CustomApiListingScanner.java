@@ -17,6 +17,11 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Override logic for the Swagger Responses goes here.
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
+ */
 public class CustomApiListingScanner extends ApiListingScanner {
 
     private SwaggerConfigUtil swaggerConfigUtil;
@@ -26,6 +31,11 @@ public class CustomApiListingScanner extends ApiListingScanner {
         this.swaggerConfigUtil =swaggerConfigUtil;
     }
 
+    /**
+     * Override Logic goes here.
+     * @param context
+     * @return
+     */
     @Override
     public Multimap<String, ApiListing> scan(ApiListingScanningContext context) {
 

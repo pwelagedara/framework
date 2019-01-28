@@ -5,10 +5,16 @@ import org.springframework.core.env.Environment;
 import org.springframework.core.type.classreading.MetadataReader;
 import org.springframework.core.type.classreading.MetadataReaderFactory;
 import org.springframework.core.type.filter.TypeFilter;
-
 import java.io.IOException;
 import java.util.stream.Stream;
 
+/**
+ * This is the Custom TypeFilter which excludes inactive Providers from Component Scan.
+ * <p>
+ * Beans are created with classes annotated with {@literal @}Component.
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
+ */
 public class ServiceAwareTypeFilter implements TypeFilter, EnvironmentAware {
 
     private static final String ANNOTATION_COMPONENT = "org.springframework.stereotype.Component";
@@ -17,6 +23,13 @@ public class ServiceAwareTypeFilter implements TypeFilter, EnvironmentAware {
     private String[] activeProfiles;
     private String serviceImplementationPackage;
 
+    /**
+     * Return true if a Bean needs to be created.
+     * @param metadataReader
+     * @param metadataReaderFactory
+     * @return
+     * @throws IOException
+     */
     @Override
     public boolean match(MetadataReader metadataReader, MetadataReaderFactory metadataReaderFactory) throws IOException {
 

@@ -1,5 +1,10 @@
 package online.pubudu.framework.dto;
 
+/**
+ * Error Dto.
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
+ */
 public class ErrorDto {
 
     private String message;

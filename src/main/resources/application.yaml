@@ -1,10 +1,14 @@
+# Activate the Profile for the Correct Provider.
 spring:
   profiles:
     active: qa,plaid
 
+# This is where you provider implementation goes to
 service:
   implementation:
     package: online.pubudu.framework.service.impl
+
+# Use this to override the Swagger Responses.
 
 swagger:
   tags:

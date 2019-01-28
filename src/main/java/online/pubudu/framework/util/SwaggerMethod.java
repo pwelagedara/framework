@@ -3,6 +3,11 @@ package online.pubudu.framework.util;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * To read Swagger Properties.
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
+ */
 public class SwaggerMethod {
 
     private String url;

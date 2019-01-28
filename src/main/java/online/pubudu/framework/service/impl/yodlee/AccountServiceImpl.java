@@ -9,6 +9,12 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Login Service implementation for Yodlee.
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
+ * @see online.pubudu.framework.service.LoginService
+ */
 @Service
 public class AccountServiceImpl implements AccountService<AccountResponseDto>{
 

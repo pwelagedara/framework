@@ -20,10 +20,18 @@ import springfox.documentation.spring.web.scanners.ApiListingScanner;
 import springfox.documentation.spring.web.scanners.ApiModelReader;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 
+/**
+ * Main Swagger Configuration.
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
+ */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {

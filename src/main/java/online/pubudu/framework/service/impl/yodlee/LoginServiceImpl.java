@@ -5,6 +5,12 @@ import online.pubudu.framework.service.LoginService;
 import online.pubudu.framework.service.impl.yodlee.dto.LoginResponseDto;
 import org.springframework.stereotype.Service;
 
+/**
+ * Login Service implementation for Yodlee.
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
+ * @see online.pubudu.framework.service.LoginService
+ */
 @Service
 public class LoginServiceImpl implements LoginService<LoginResponseDto>{
 

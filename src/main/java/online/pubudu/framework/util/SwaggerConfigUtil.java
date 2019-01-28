@@ -7,6 +7,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * To read Swagger Properties.
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
+ */
 @Service
 @ConfigurationProperties(prefix = "swagger")
 public class SwaggerConfigUtil {

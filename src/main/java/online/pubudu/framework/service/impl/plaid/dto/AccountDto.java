@@ -1,5 +1,10 @@
 package online.pubudu.framework.service.impl.plaid.dto;
 
+/**
+ * Account Dto for Plaid.
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
+ */
 public class AccountDto {
 
     private String accountNumber;

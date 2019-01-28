@@ -2,6 +2,11 @@ package online.pubudu.framework.service.impl.yodlee.dto;
 
 import java.math.BigDecimal;
 
+/**
+ * Account Dto for Yodlee.
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
+ */
 public class AccountDto {
 
     private String accountNumber;

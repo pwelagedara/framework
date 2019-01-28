@@ -1,5 +1,10 @@
 package online.pubudu.framework.util;
 
+/**
+ * To read Swagger Properties.
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
+ */
 public class SwaggerResponse {
 
     private int code;

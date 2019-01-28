@@ -1,5 +1,10 @@
 package online.pubudu.framework.service.impl.yodlee.dto;
 
+/**
+ * Login Response Dto for Yodlee.
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
+ */
 public class LoginResponseDto {
 
     private String cobSession;

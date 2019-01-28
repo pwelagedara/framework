@@ -1,5 +1,10 @@
 package online.pubudu.framework.dto;
 
+/**
+ * Login Dto.
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
+ */
 public class LoginDto {
 
     private String guid;

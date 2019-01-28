@@ -4,10 +4,15 @@ import online.pubudu.framework.service.AccountService;
 import online.pubudu.framework.service.impl.plaid.dto.AccountDto;
 import online.pubudu.framework.service.impl.plaid.dto.AccountResponseDto;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Account Service implementation for Plaid.
+ * @author pubudu welagedara
+ * @see <a href="http://pubudu.online">pubudu.online</a>
+ * @see online.pubudu.framework.service.AccountService
+ */
 @Service
 public class AccountServiceImpl  implements AccountService<AccountResponseDto>{
 

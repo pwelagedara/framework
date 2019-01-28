@@ -39,7 +39,7 @@ public class CustomApiListingScanner extends ApiListingScanner {
                         if ( a.getPath().equals(m.getUrl()) && a.getOperations().get(0).getMethod() == HttpMethod.valueOf(m.getMethod())) {
                             a.getOperations().get(0).getResponseMessages().remove(new ResponseMessageBuilder().code(m.getCode()).build());
                             try {
-                                a.getOperations().get(0).getResponseMessages().add(new ResponseMessageBuilder().code(m.getCode()).message(m.getMessage()).responseModel(new ModelRef(/* */ Class.forName(m.getResponseClass()).getSimpleName())).build());
+                                a.getOperations().get(0).getResponseMessages().add(new ResponseMessageBuilder().code(m.getCode()).message(m.getMessage()).responseModel(new ModelRef(Class.forName(m.getResponseClass()).getSimpleName())).build());
                             } catch (ClassNotFoundException e) {
                                 // Ignored
                             }

@@ -9,7 +9,6 @@ service:
     package: online.pubudu.framework.service.impl
 
 # Use this to override the Swagger Responses.
-
 swagger:
   tags:
     login-controller:

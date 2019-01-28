@@ -2,6 +2,8 @@ package online.pubudu.framework.config;
 
 import com.fasterxml.classmate.ResolvedType;
 import com.fasterxml.classmate.TypeResolver;
+import online.pubudu.framework.util.SwaggerConfigUtil;
+import online.pubudu.framework.util.SwaggerMethod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -37,21 +39,22 @@ public class SwaggerConfig {
     private TypeResolver typeResolver;
 
     @Autowired
-    private SwaggerConfigService swaggerConfigService;
+    private SwaggerConfigUtil swaggerConfigUtil;
 
     @Bean
     public Docket api() {
 
-        List<List<SwaggerMethod>> listSwaggerMethodsList = swaggerConfigService.getTags().values().stream().collect(Collectors.toList());
-        List<SwaggerMethod> swaggerMethodsList = listSwaggerMethodsList.stream().flatMap(Collection::stream).collect(Collectors.toList());
+        List<List<SwaggerMethod>> listOfSwaggerMethodsList = swaggerConfigUtil.getTags().values().stream().collect(Collectors.toList());
         Set<String> uniqueClassNames = new HashSet<>();
-        swaggerMethodsList.forEach( s -> {
-            uniqueClassNames.add(s.getResponseClass());
-                }
-        );
+        listOfSwaggerMethodsList.forEach(s -> {
+            s.forEach(r -> {
+                r.getResponses().forEach(c -> {
+                    uniqueClassNames.add(c.getResponseClass());
+                });
+            });
+        });
 
         List<ResolvedType> additionalObjectsList = new ArrayList<ResolvedType>();
-
         uniqueClassNames.forEach(u -> {
             try {
                 additionalObjectsList.add(typeResolver.resolve(Class.forName(u)));
@@ -85,6 +88,6 @@ public class SwaggerConfig {
     @Bean
     public ApiListingScanner addExtraOperations(ApiDescriptionReader apiDescriptionReader, ApiModelReader apiModelReader, DocumentationPluginsManager documentationPluginsManager)
     {
-        return new CustomApiListingScanner(apiDescriptionReader, apiModelReader, documentationPluginsManager, swaggerConfigService);
+        return new CustomApiListingScanner(apiDescriptionReader, apiModelReader, documentationPluginsManager, swaggerConfigUtil);
     }
 }

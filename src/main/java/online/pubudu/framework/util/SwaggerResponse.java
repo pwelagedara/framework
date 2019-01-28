@@ -1,10 +1,6 @@
-package online.pubudu.framework.config;
+package online.pubudu.framework.util;
 
-public class SwaggerMethod {
-
-    private String url;
-
-    private String method;
+public class SwaggerResponse {
 
     private int code;
 
@@ -12,31 +8,13 @@ public class SwaggerMethod {
 
     private String responseClass;
 
-    public SwaggerMethod() {
+    public SwaggerResponse() {
     }
 
-    public SwaggerMethod(String url, String method, int code, String message, String responseClass) {
-        this.url = url;
-        this.method = method;
+    public SwaggerResponse(int code, String message, String responseClass) {
         this.code = code;
         this.message = message;
         this.responseClass = responseClass;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public String getMethod() {
-        return method;
-    }
-
-    public void setMethod(String method) {
-        this.method = method;
     }
 
     public int getCode() {

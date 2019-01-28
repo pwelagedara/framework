@@ -1,4 +1,4 @@
-package online.pubudu.framework.config;
+package online.pubudu.framework.util;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Service;
@@ -9,14 +9,14 @@ import java.util.Map;
 
 @Service
 @ConfigurationProperties(prefix = "swagger")
-public class SwaggerConfigService {
+public class SwaggerConfigUtil {
 
     private Map<String, List<SwaggerMethod>> tags = new HashMap<String, List<SwaggerMethod>>();
 
-    public SwaggerConfigService() {
+    public SwaggerConfigUtil() {
     }
 
-    public SwaggerConfigService(Map<String, List<SwaggerMethod>> tags) {
+    public SwaggerConfigUtil(Map<String, List<SwaggerMethod>> tags) {
         this.tags = tags;
     }
 

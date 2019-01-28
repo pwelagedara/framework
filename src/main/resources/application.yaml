@@ -11,22 +11,23 @@ swagger:
     login-controller:
       - url: /login
         method: POST
-        code: 200
-        message: new message
-        response-class: online.pubudu.framework.service.impl.plaid.dto.LoginResponseDto
-      - url: /login
-        method: POST
-        code: 404
-        message: new message
-        response-class: online.pubudu.framework.service.impl.plaid.dto.LoginResponseDto
+        responses:
+          - code: 200
+            message: new message
+            response-class: online.pubudu.framework.service.impl.plaid.dto.LoginResponseDto
+          - code: 404
+            message: new message
+            response-class: online.pubudu.framework.service.impl.plaid.dto.LoginResponseDto
       - url: /login
         method: GET
-        code: 200
-        message: new message
-        response-class: online.pubudu.framework.service.impl.plaid.dto.AccountResponseDto
+        responses:
+          - code: 200
+            message: new message
+            response-class: online.pubudu.framework.service.impl.plaid.dto.AccountResponseDto
     account-controller:
       - url: /account
         method: GET
-        code: 200
-        message: new message
-        response-class: online.pubudu.framework.service.impl.plaid.dto.AccountResponseDto
+        responses:
+          - code: 201
+            message: new message
+            response-class: online.pubudu.framework.service.impl.plaid.dto.AccountResponseDto

@@ -1,0 +1,32 @@
+spring:
+  profiles:
+    active: qa,plaid
+
+service:
+  implementation:
+    package: online.pubudu.framework.service.impl
+
+swagger:
+  tags:
+    login-controller:
+      - url: /login
+        method: POST
+        code: 200
+        message: new message
+        response-class: online.pubudu.framework.service.impl.plaid.dto.LoginResponseDto
+      - url: /login
+        method: POST
+        code: 404
+        message: new message
+        response-class: online.pubudu.framework.service.impl.plaid.dto.LoginResponseDto
+      - url: /login
+        method: GET
+        code: 200
+        message: new message
+        response-class: online.pubudu.framework.service.impl.plaid.dto.AccountResponseDto
+    account-controller:
+      - url: /account
+        method: GET
+        code: 200
+        message: new message
+        response-class: online.pubudu.framework.service.impl.plaid.dto.AccountResponseDto

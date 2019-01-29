@@ -1,7 +1,15 @@
 # Activate the Profile for the Correct Provider.
 spring:
   profiles:
-    active: qa,plaid
+    active: qa,yodlee
+  cache:
+    type: redis
+#    redis:
+#      time-to-live: 60000 # 1 minute
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
 
 # This is where you provider implementation goes to
 service:

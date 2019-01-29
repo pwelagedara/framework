@@ -1,11 +1,13 @@
 package online.pubudu.framework.service.impl.yodlee.dto;
 
+import java.io.Serializable;
+
 /**
  * Login Response Dto for Yodlee.
  * @author pubudu welagedara
  * @see <a href="http://pubudu.online">pubudu.online</a>
  */
-public class LoginResponseDto {
+public class LoginResponseDto implements Serializable {
 
     private String cobSession;
 

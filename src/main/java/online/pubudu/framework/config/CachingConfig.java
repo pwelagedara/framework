@@ -26,19 +26,19 @@ import java.util.Map;
 @Configuration
 @EnableCaching
 public class CachingConfig {
-
-    @Bean
-    public RedisCacheManager redisCacheManager(RedisConnectionFactory connectionFactory) {
-
-        RedisCacheWriter redisCacheWriter = RedisCacheWriter.lockingRedisCacheWriter(connectionFactory);
-        RedisSerializationContext.SerializationPair<Object> valueSerializationPair = RedisSerializationContext.SerializationPair
-                .fromSerializer(new GenericJackson2JsonRedisSerializer());
-        RedisCacheConfiguration cacheConfiguration = RedisCacheConfiguration.defaultCacheConfig();
-        cacheConfiguration = cacheConfiguration.serializeValuesWith(valueSerializationPair);
-        cacheConfiguration = cacheConfiguration.prefixKeysWith("myPrefix");
-        cacheConfiguration = cacheConfiguration.entryTtl(Duration.ofSeconds(30));
-
-        RedisCacheManager redisCacheManager = new RedisCacheManager(redisCacheWriter, cacheConfiguration);
-        return redisCacheManager;
-    }
+//
+//    @Bean
+//    public RedisCacheManager redisCacheManager(RedisConnectionFactory connectionFactory) {
+//
+//        RedisCacheWriter redisCacheWriter = RedisCacheWriter.lockingRedisCacheWriter(connectionFactory);
+//        RedisSerializationContext.SerializationPair<Object> valueSerializationPair = RedisSerializationContext.SerializationPair
+//                .fromSerializer(new GenericJackson2JsonRedisSerializer());
+//        RedisCacheConfiguration cacheConfiguration = RedisCacheConfiguration.defaultCacheConfig();
+//        cacheConfiguration = cacheConfiguration.serializeValuesWith(valueSerializationPair);
+//        cacheConfiguration = cacheConfiguration.prefixKeysWith("myPrefix");
+//        cacheConfiguration = cacheConfiguration.entryTtl(Duration.ofSeconds(30));
+//
+//        RedisCacheManager redisCacheManager = new RedisCacheManager(redisCacheWriter, cacheConfiguration);
+//        return redisCacheManager;
+//    }
 }
